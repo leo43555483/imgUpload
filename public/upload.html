@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX 多图片上传 demo</title>
+    <link rel="stylesheet" type="text/css" href="../build/upload.min.css">
+    <meta name="keywords" content="AJAX,图片上传">
+</head>
+<body>
+    <div class="g_uploadWrap">
+        <form method="post" action="" enctype="multipart formdata">
+            <input class="g_block g_photoInform" style="margin-left: 40px" type="text" name="photo_author" placeholder="请输入作者名称" required>
+            <ul id="g_photoUpload" class="g_itemWrap">
+                <li class="g_photoItem">
+                    <label class="g_uploadBtn" for="g_uploadInput">
+                        <p class="g_Center">请在此处添加照片</p>                       
+                        <input id="g_uploadInput" class="g_block" type="file" name="photo" accept="image/jpg,image/jpeg" multiple>
+                    </label>                
+                </li>
+            </ul>
+        </form>
+        <div class="g_horCenter">
+            <button type="button" class="g_submitLoad">提交上传</button>
+        </div>      
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../build/bundle.js"></script>
+</body>
+</html>
