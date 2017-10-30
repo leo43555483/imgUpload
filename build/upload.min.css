@@ -1,11 +1,11 @@
  
  font-face {
      font-family: 'iconfont';
-     src: url(fonts/public/fonts/iconfont.d88b422.eot);
-     src: url(fonts/public/fonts/iconfont.d88b422.eot?#iefix) format('embedded-opentype'),
-     url(fonts/public/fonts/iconfont.b9900d4.woff) format('woff'),
-     url(fonts/public/fonts/iconfont.f10e720.ttf) format('truetype'),
-     url(fonts/public/fonts/iconfont.7b4f7e7.svg#iconfont) format('svg');
+     src: url(fonts/iconfont.d88b422.eot);
+     src: url(fonts/iconfont.d88b422.eot?#iefix) format('embedded-opentype'),
+     url(fonts/iconfont.b9900d4.woff) format('woff'),
+     url(fonts/iconfont.f10e720.ttf) format('truetype'),
+     url(fonts/iconfont.7b4f7e7.svg#iconfont) format('svg');
  }
 
  .iconfont {

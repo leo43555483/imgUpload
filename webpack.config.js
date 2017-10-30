@@ -5,7 +5,7 @@
         devtool: 'eval-source-map',
         entry: __dirname + "/index.js",
         output: {
-            path: __dirname + "/bulid/",
+            path: __dirname + "/build/",
             filename: "bundle.js"
         },
         resolve: {
