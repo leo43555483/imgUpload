@@ -41,7 +41,6 @@ PhotoUpload.prototype = {
         let self = this;
         let file = this.fileArray;
 
-        let condition = this.fileArray.length <= 0 ? true : false;
         let checked = self.control.check(self);                    //验证是否可提交
         if (!checked) {
             this.views.inputAuthor();
