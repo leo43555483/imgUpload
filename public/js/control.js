@@ -25,7 +25,7 @@
          console.log(e)
      },
      ajaxConfig: {
-         url: '/api/uoloadPhoto',
+         url: '/api/uploadPhoto',
          type: 'post',
          async: true,
          file: null,
