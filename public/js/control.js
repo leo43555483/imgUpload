@@ -2,6 +2,7 @@
      _MAX_SIZE: 10240,
      check: function(upload) {
          let inputValue = $("[name='photo_author']").val();
+         console.log(upload.fileArray.length)
          let condition = upload.fileArray.length <= 0 ? true : false;
          if (inputValue == "" || condition) {
              return false
@@ -20,15 +21,18 @@
          };
          return state
      },
-     progress:function(e){
-        console.log(e)
+     progress: function(e) {
+         console.log(e)
      },
-     ajaxConfig:{
-            url: '/api/uoloadPhoto',
-            type: 'post',
-            async: true,
-            file: null,
-        }
+     ajaxConfig: {
+         url: '/api/uoloadPhoto',
+         type: 'post',
+         async: true,
+         file: null,
+     },
+     inform: {
+         author: String
+     }
  }
 
  module.exports = control;

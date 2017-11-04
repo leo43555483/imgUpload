@@ -8,7 +8,6 @@ let main = function(){
         dragDrop: null,
         submitBtn: null,
     }
-    console.log(control)
     let defaultControl = {
         filter: function(file) {
             return file
@@ -26,6 +25,7 @@ let main = function(){
 PhotoUpload.prototype = {
     init: function() {
         let self = this;
+        this.inform = this.control.inform;
         if (this.views.inputFile) {
             this.views.inputFile.on("change", function(e) {
                 self.getFiles(e);
@@ -40,26 +40,22 @@ PhotoUpload.prototype = {
     submitData: function() {
         let self = this;
         let file = this.fileArray;
-
-        let checked = self.control.check(self);                    //验证是否可提交
+        let form = new FormData();
+        let checked = this.inform.author = self.control.check(self);             //验证是否可提交
+        let opt = this.control.ajaxConfig;                                      //AJAX参数
         if (!checked) {
             this.views.inputAuthor();
             return
         }
-        let opt = this.control.ajaxConfig;                              //AJAX参数
-        console.log(opt)
-        for (let i = 0; i < file.length; i++) {
-            file[i].author = checked;
-            opt.file = file[i];
-            self.Ajax(opt, i);
-        }
+        for(let i = 0; i < file.length; i++){
+                form.append('file',file[i]);
+            }
+            form.append('information',JSON.stringify(this.inform));
+            self.Ajax(opt,form);
     },
 
-    Ajax: function(opt, index) {
+    Ajax: function(opt, form) {
         let xhr = new XMLHttpRequest();
-        let form = new FormData();
-
-        form.append(`file`, opt.file)
         let self = this;
         if (xhr.upload) {
             xhr.upload.addEventListener("progress", function(e) {
